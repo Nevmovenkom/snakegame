@@ -1,7 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-#include "SnakeElementBase.h"
 #include "Snake.h"
+#include "SnakeElementBase.h"
 
 // Sets default values
 ASnake::ASnake()
@@ -46,7 +45,8 @@ void ASnake::AddSnakeElements(int ElementsNum)
 
 void ASnake::Move()
 {
-	FVector MovementVector;
+	
+	FVector MovementVector(FVector::ZeroVector);
 	float  MovementSpeed = ElementSize;
 		switch (LastMoveDirection)
 			{
