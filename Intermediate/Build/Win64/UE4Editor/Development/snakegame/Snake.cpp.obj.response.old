@@ -256,17 +256,14 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\INCLUDE"
+/I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.2\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"C:\Users\matvey\snakegame\Intermediate\Build\Win64\snakegameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"C:\Users\matvey\snakegame\Intermediate\Build\Win64\snakegameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\matvey\snakegame\Intermediate\Build\Win64\snakegameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
 "C:\Users\matvey\snakegame\Source\snakegame\Snake.cpp"
-/FI"C:\Users\matvey\snakegame\Intermediate\Build\Win64\UE4Editor\Development\snakegame\Definitions.snakegame.h"
+/FI"C:\Users\matvey\snakegame\Intermediate\Build\Win64\UE4Editor\Development\snakegame\Definitions.h"
 /Fo"C:\Users\matvey\snakegame\Intermediate\Build\Win64\UE4Editor\Development\snakegame\Snake.cpp.obj"
 /TP
 /GR-

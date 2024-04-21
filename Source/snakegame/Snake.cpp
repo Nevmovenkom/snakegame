@@ -1,6 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "Snake.h"
 #include "SnakeElementBase.h"
+#include "INTERACTABLE1.h"
+
 
 // Sets default values
 ASnake::ASnake()
@@ -9,7 +11,7 @@ ASnake::ASnake()
 	PrimaryActorTick.bCanEverTick = true;
 	ElementSize = 100.f;
 	speed = 0.5f;
-	LastMoveDirection = Movement::UP;
+	LastMoveDirection = Movement::DOWN;
 }
 
 // Called when the game starts or when spawned
@@ -35,6 +37,7 @@ void ASnake::AddSnakeElements(int ElementsNum)
 		FVector NewLocation(SnakeElements.Num() * ElementSize, 0, 0);
 		FTransform NewTransform(NewLocation);
 		ASnakeElementBase* NewSnakeElements = GetWorld()->SpawnActor<ASnakeElementBase>(SnakeElementClass, NewTransform);
+		NewSnakeElements->SnakeOwner = this;
 		int32 ElemIndex = SnakeElements.Add(NewSnakeElements);
 		if (ElemIndex == 0)
 		{
@@ -47,22 +50,25 @@ void ASnake::Move()
 {
 	
 	FVector MovementVector(FVector::ZeroVector);
-	float  MovementSpeed = ElementSize;
 		switch (LastMoveDirection)
 			{
 			case Movement::UP:
-				MovementVector.X += MovementSpeed;
+				MovementVector.X += ElementSize;
 				break;
 			case Movement::DOWN:
-				MovementVector.X -= MovementSpeed;
+				MovementVector.X -= ElementSize;
 				break;
 			case Movement::LEFT:
-				MovementVector.Y += MovementSpeed;
+				MovementVector.Y += ElementSize;
 				break;
 			case Movement::RIGHT:
-				MovementVector.Y -= MovementSpeed;
+				MovementVector.Y -= ElementSize;
 				break;
 			}
+
+		SnakeElements[0]->ToggleCollision();
+
+
 		for (int i = SnakeElements.Num() - 1; i > 0; i--)
 		{
 			auto CurrentElement = SnakeElements[i];
@@ -71,6 +77,21 @@ void ASnake::Move()
 			CurrentElement->SetActorLocation(PrewLocation);
 		}
 		SnakeElements[0]->AddActorWorldOffset(MovementVector);
+		SnakeElements[0]->ToggleCollision();
+}
 
+void ASnake::SnakeElementOverlap(ASnakeElementBase* OverlappedElement, AActor* Other)
+{
+	if (IsValid(OverlappedElement))
+	{
+		int32 ElemIndex;
+		SnakeElements.Find(OverlappedElement, ElemIndex);
+		bool bIsFirst = ElemIndex == 0;
+		IINTERACTABLE1* interactInterface = Cast<IINTERACTABLE1>(Other);
+		if (interactInterface)
+		{
+			interactInterface->Interact(this, bIsFirst);
+		}
+	}
 }
 

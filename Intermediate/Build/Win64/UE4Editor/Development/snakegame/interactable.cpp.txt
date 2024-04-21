@@ -1,0 +1,3 @@
+C:\Users\matvey\snakegame\Intermediate\Build\Win64\UE4Editor\Development\snakegame\Definitions.snakegame.h
+C:\Users\matvey\snakegame\Source\snakegame\interactable.h
+C:\Users\matvey\snakegame\Intermediate\Build\Win64\UE4Editor\Inc\snakegame\interactable.generated.h

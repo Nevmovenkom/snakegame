@@ -2,4 +2,6 @@ C:\Users\matvey\snakegame\Intermediate\Build\Win64\UE4Editor\Development\snakega
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
 C:\Users\matvey\snakegame\Source\snakegame/SnakeElementBase.h
+C:\Users\matvey\snakegame\Source\snakegame\INTERACTABLE1.h
+C:\Users\matvey\snakegame\Intermediate\Build\Win64\UE4Editor\Inc\snakegame\INTERACTABLE1.generated.h
 C:\Users\matvey\snakegame\Intermediate\Build\Win64\UE4Editor\Inc\snakegame\SnakeElementBase.generated.h

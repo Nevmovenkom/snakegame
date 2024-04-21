@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\snakegame.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{EA4EB2A8-0202-4FD7-92A9-0E84999BC4B5}</UniqueIdentifier>
+      <UniqueIdentifier>{A22FF0FA-C1F9-41BC-86C0-FC57D46B945B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\snakegame.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\snakegameEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{F608D52C-A639-4CF5-8C89-343A8403D9D5}</UniqueIdentifier>
+      <UniqueIdentifier>{2CE00378-69A2-46CC-9837-890A1EBB00CE}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -23,9 +25,36 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
     <Filter Include="Source\snakegame">
-      <UniqueIdentifier>{2C5E8F28-06A7-4345-AAF7-D5E47D132F55}</UniqueIdentifier>
+      <UniqueIdentifier>{3780133F-471B-4431-941B-F7F3F6646134}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\snakegame\Food.cpp">
+      <Filter>Source\snakegame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\snakegame\Food.h">
+      <Filter>Source\snakegame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\snakegame\interactable.cpp">
+      <Filter>Source\snakegame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\snakegame\interactable.h">
+      <Filter>Source\snakegame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\snakegame\INTERACTABLE1.cpp">
+      <Filter>Source\snakegame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\snakegame\INTERACTABLE1.h">
+      <Filter>Source\snakegame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\snakegame\MyActor.cpp">
+      <Filter>Source\snakegame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\snakegame\MyActor.h">
+      <Filter>Source\snakegame</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\snakegame\PlayerPawnBase.cpp">
       <Filter>Source\snakegame</Filter>
     </ClCompile>
