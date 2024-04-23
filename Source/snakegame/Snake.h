@@ -20,8 +20,8 @@ UCLASS()
 class SNAKEGAME_API ASnake : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 
 
 	// Sets default values for this actor's properties
@@ -37,13 +37,13 @@ public:
 	Movement LastMoveDirection;
 	UPROPERTY(EditDefaultsOnly)
 	float speed;
-
+	bool b_Control = true;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -54,4 +54,6 @@ public:
 	UFUNCTION()
 	void SnakeElementOverlap(ASnakeElementBase* OverlappedElement, AActor* Other);
 
+	UFUNCTION(BlueprintCallable)
+	void AddNewElements(int Elements = 1);
 };

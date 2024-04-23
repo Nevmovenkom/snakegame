@@ -27,12 +27,6 @@ void APlayerPawnBase::BeginPlay()
 	CreateSnakeActor();
 }
 
-// Called every frame
-void APlayerPawnBase::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
 
 // Called to bind functionality to input
 void APlayerPawnBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -49,17 +43,21 @@ void APlayerPawnBase::CreateSnakeActor()
 	SnakeActor = GetWorld()->SpawnActor<ASnake>(SnakeActorClass, FTransform());
 }
 
-void APlayerPawnBase::HandlePlayerVerticalInput(float value)
+void APlayerPawnBase::HandlePlayerVerticalInput(float value)	
 {
 	if (IsValid(SnakeActor))
 	{
-		if (value > 0 && SnakeActor->LastMoveDirection != Movement::DOWN)
+		if (value > 0 && SnakeActor->LastMoveDirection != Movement::DOWN && SnakeActor->b_Control)
 		{
 			SnakeActor->LastMoveDirection = Movement::UP;
+
+			SnakeActor->b_Control = false;
 		}
-		else if (value < 0 && SnakeActor->LastMoveDirection != Movement::DOWN)
+		else if (value < 0 && SnakeActor->LastMoveDirection != Movement::UP && SnakeActor->b_Control)
 		{
 			SnakeActor->LastMoveDirection = Movement::DOWN;
+
+			SnakeActor->b_Control = false;
 		}
 	}
 }
@@ -68,13 +66,17 @@ void APlayerPawnBase::HandlePlayerHorizontalPlayer(float value)
 {
 	if (IsValid(SnakeActor))
 	{
-		if (value > 0 && SnakeActor->LastMoveDirection != Movement::LEFT)
+		if (value > 0 && SnakeActor->LastMoveDirection != Movement::LEFT && SnakeActor->b_Control)
 		{
 			SnakeActor->LastMoveDirection = Movement::RIGHT;
+
+			SnakeActor->b_Control = false;
 		}
-		else if (value < 0 && SnakeActor->LastMoveDirection != Movement::RIGHT)
+		else if (value < 0 && SnakeActor->LastMoveDirection != Movement::RIGHT && SnakeActor->b_Control)
 		{
 			SnakeActor->LastMoveDirection = Movement::LEFT;
+
+			SnakeActor->b_Control = false;
 		}
 	}
 }
