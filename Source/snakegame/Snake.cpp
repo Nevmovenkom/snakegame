@@ -101,6 +101,29 @@ void ASnake::AddNewElements(int Elements)
 {
 	for (int i = 0; i < Elements; i++)
 	{
+		of = of + 1;
+		FVector NewLocation(0, 0, 5000);
+		FTransform NewTransform(NewLocation);
+		ASnakeElementBase* NewSnakeElements = GetWorld()->SpawnActor<ASnakeElementBase>(SnakeElementClass, NewTransform);
+		NewSnakeElements->SnakeOwner = this;
+		int32 ElemIndex = SnakeElements.Add(NewSnakeElements);
+		if (ElemIndex == 0)
+		{
+			NewSnakeElements->SetFirstElementType();
+		}
+		
+		if (of == 5)
+		{
+			AddNewBonusElements();
+		}
+	}
+}
+
+void ASnake::AddNewBonusElements(int Elements)
+{
+	for (int i = 0; i < Elements; i++)
+	{
+		of = 0;
 		FVector NewLocation(0, 0, 5000);
 		FTransform NewTransform(NewLocation);
 		ASnakeElementBase* NewSnakeElements = GetWorld()->SpawnActor<ASnakeElementBase>(SnakeElementClass, NewTransform);
@@ -112,4 +135,3 @@ void ASnake::AddNewElements(int Elements)
 		}
 	}
 }
-

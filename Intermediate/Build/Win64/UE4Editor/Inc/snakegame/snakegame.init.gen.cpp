@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodesnakegame_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x1D41B4B3,
+				0x8B3AFC61,
 				0xAD66BE1E,
 				METADATA_PARAMS(nullptr, 0)
 			};

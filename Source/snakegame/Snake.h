@@ -38,6 +38,7 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	float speed;
 	bool b_Control = true;
+	int of = 0;
 
 protected:
 	// Called when the game starts or when spawned
@@ -56,4 +57,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void AddNewElements(int Elements = 1);
+
+	UFUNCTION(BlueprintCallable)
+	void AddNewBonusElements(int Elements = 1);
 };

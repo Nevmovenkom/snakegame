@@ -18,6 +18,7 @@ class AActor;
 #define snakegame_Source_snakegame_Snake_h_22_SPARSE_DATA
 #define snakegame_Source_snakegame_Snake_h_22_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execAddNewBonusElements); \
 	DECLARE_FUNCTION(execAddNewElements); \
 	DECLARE_FUNCTION(execSnakeElementOverlap); \
 	DECLARE_FUNCTION(execMove); \
@@ -26,6 +27,7 @@ class AActor;
 
 #define snakegame_Source_snakegame_Snake_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execAddNewBonusElements); \
 	DECLARE_FUNCTION(execAddNewElements); \
 	DECLARE_FUNCTION(execSnakeElementOverlap); \
 	DECLARE_FUNCTION(execMove); \
